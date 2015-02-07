@@ -94,4 +94,13 @@
     <!-- Battery Saver Dimss -->
     <string name="battery_saver_dismiss_title">Dismiss</string>
     <string name="battery_saver_notification_action_text_short">Turn off</string>
+
+    <!-- mount notifications -->
+    <string name="ext_media_mounted_notification_title">mounted</string>
+    <string name="ext_media_unmounted_notification_title">unmounted</string>
+    <string name="ext_media_unmounted_notification_message">You can safely remove storage.</string>
+    <string name="ext_media_unmount_action">Unmount</string>
+    <string name="ext_media_mount_action">Mount</string>
+    <string name="ext_media_unmounting_notification_title">unmounting\u2026</string>
+    <string name="ext_media_mounting_notification_title">mounting\u2026</string>
 </resources>
