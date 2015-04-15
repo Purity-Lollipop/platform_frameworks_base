@@ -116,4 +116,8 @@
     <string name="permlab_preventpower">override power key</string>
     <!-- Description of an application permission, listed so the user can choose whether they want to allow the application to do this. -->
     <string name="permdesc_preventpower">Allows an app to override the power key.</string>
+
+    <!-- Notification which notifies user flashlight is enabled -->
+    <string name="quick_settings_tile_flashlight_not_title">Flashlight is on</string>
+    <string name="quick_settings_tile_flashlight_not_summary">Tap to turn off</string>
 </resources>
