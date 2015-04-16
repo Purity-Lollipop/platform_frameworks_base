@@ -35,10 +35,12 @@ import com.android.systemui.statusbar.policy.NetworkController.MobileDataControl
 import com.android.systemui.statusbar.policy.NetworkController.NetworkSignalChangedCallback;
 
 /** Quick settings tile: Cellular **/
-public class CellularTile extends QSTile<QSTile.SignalState> {
-    private static final Intent CELLULAR_SETTINGS = new Intent().setComponent(new ComponentName(
+    public class CellularTile extends QSTile<QSTile.SignalState> {
+    private static final Intent DATA_USAGE_SETTINGS = new Intent().setComponent(new ComponentName(
             "com.android.settings", "com.android.settings.Settings$DataUsageSummaryActivity"));
-    private static final Intent WIRELESS_SETTINGS = new Intent(Settings.ACTION_WIRELESS_SETTINGS);
+    private static final Intent MOBILE_NETWORK_SETTINGS = new Intent(Intent.ACTION_MAIN)
+            .setComponent(new ComponentName("com.android.phone",
+                    "com.android.phone.MobileNetworkSettings"));
 
     private final NetworkController mController;
     private final MobileDataController mDataController;
@@ -80,13 +82,13 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
         if (mDataController.isMobileDataSupported()) {
             showDetail(true);
         } else {
-            mHost.startSettingsActivity(CELLULAR_SETTINGS);
+            mHost.startSettingsActivity(DATA_USAGE_SETTINGS);
         }
     }
 
     @Override
     protected void handleLongClick() {
-        mHost.startSettingsActivity(WIRELESS_SETTINGS);
+        mHost.startSettingsActivity(MOBILE_NETWORK_SETTINGS);
     }
 
     @Override
@@ -225,7 +227,7 @@ public class CellularTile extends QSTile<QSTile.SignalState> {
 
         @Override
         public Intent getSettingsIntent() {
-            return CELLULAR_SETTINGS;
+            return DATA_USAGE_SETTINGS;
         }
 
         @Override
